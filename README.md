@@ -14,4 +14,4 @@ npm run serve
 ```
 npm run build
 ```
-
+### 设计稿基准为750px，开发的时候单位对着设计稿写px即可，已做px2rem适配
