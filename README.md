@@ -1,4 +1,4 @@
-# oc-m
+# 协作移动端
 
 ## 初始化
 ```
@@ -14,3 +14,4 @@ npm run serve
 ```
 npm run build
 ```
+
