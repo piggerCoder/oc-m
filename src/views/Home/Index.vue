@@ -1,47 +1,41 @@
 <template>
   <div class="home">
-    <van-form>
-      <van-field
-              v-model="username"
-              name="用户名"
-              label="用户名"
-              placeholder="用户名"
-              :rules="[{ required: true, message: '请填写用户名' }]"
-      />
-      <van-field
-              v-model="password"
-              type="password"
-              name="密码"
-              label="密码"
-              placeholder="密码"
-              :rules="[{ required: true, message: '请填写密码' }]"
-      />
-      <div style="margin: 16px;">
-        <van-button round block type="info" native-type="submit">
-          提交
-        </van-button>
-      </div>
-    </van-form>
+    <van-tabbar v-model="active" active-color="#26978F" inactive-color="#565656" class="tab">
+      <van-tabbar-item name="notice" icon="comment-o" replace to="/notice">通知</van-tabbar-item>
+      <van-tabbar-item name="project" icon="points" replace to="/project">项目</van-tabbar-item>
+      <van-tabbar-item name="file" icon="description" replace to="/file">文件</van-tabbar-item>
+      <van-tabbar-item name="me" icon="contact" replace to="/me">我</van-tabbar-item>
+    </van-tabbar>
+    <router-view id="router-view" />
   </div>
 </template>
 
 <script>
-export default {
-  name: "Home",
-  mounted() {
-    this.getLog();
-  },
-  methods: {
-    async getLog() {
-      //调接口简单示例
-      const res = await this.$_api.getAllLog();
-      console.log(res);
+  export default {
+    name: "Home",
+    data() {
+      return {
+        active: 'project'
+      }
+    },
+    mounted() {
+      this.getLog();
+    },
+    methods: {
+      async getLog() {
+        //调接口简单示例
+        const res = await this.$_api.getAllLog();
+        console.log(res);
+      }
     }
-  }
-};
+  };
 </script>
 <style lang="less" scoped>
-.home {
-  width: 750px;
-}
+  .home {
+    width: 750px;
+    background-color: #F8F8F8;
+  }
+  #router-view {
+    flex: 1;
+  }
 </style>
