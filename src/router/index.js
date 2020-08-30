@@ -6,6 +6,9 @@ const Notice = () => import('../views/Notice/Index.vue')
 const Project = () => import('../views/Project/Index.vue')
 const Me = () => import('../views/Me/Index.vue')
 const File = () => import('../views/File/Index.vue')
+const Task =() => import('../views/Project/children/Task.vue')
+const ProjectHome =() => import('../views/Project/children/Home.vue')
+const TaskDetail =() => import('../views/Project/children/Detail.vue')
 Vue.use(VueRouter)
 
 const routes = [{
@@ -23,6 +26,24 @@ const routes = [{
       path: '/project',
       name: 'Project',
       component: Project,
+      children: [
+        {
+          path: '/task',
+          name: 'Task',
+          component: Task,
+        },
+        {
+          path: '/project',
+          name: 'ProjectHome',
+          component: ProjectHome,
+        },
+
+      ]
+    },
+    {
+      path: '/project/:id',
+      name: 'TaskDetail',
+      component: TaskDetail,
     },
     {
       path: '/me',

@@ -33,7 +33,7 @@
 <style lang="less" scoped>
   .home {
     width: 750px;
-    background-color: #F8F8F8;
+
   }
   #router-view {
     flex: 1;
