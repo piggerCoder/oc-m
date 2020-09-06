@@ -3,10 +3,10 @@ import App from './App.vue'
 import router from './router'
 import 'amfe-flexible'
 import api from './api'
-import Vant from 'vant'
-import 'vant/lib/index.css'
+import './assets/js/global.js'
+import {installComponent} from './assets/js/component.js'
 
-Vue.use(Vant)
+installComponent(Vue)
 Vue.use(api)
 Vue.config.productionTip = false
 

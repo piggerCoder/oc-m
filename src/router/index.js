@@ -6,9 +6,10 @@ const Notice = () => import('../views/Notice/Index.vue')
 const Project = () => import('../views/Project/Index.vue')
 const Me = () => import('../views/Me/Index.vue')
 const File = () => import('../views/File/Index.vue')
-const Task =() => import('../views/Project/children/Task.vue')
-const ProjectHome =() => import('../views/Project/children/Home.vue')
-const TaskDetail =() => import('../views/Project/children/Detail.vue')
+const Task = () => import('../views/Project/children/Task.vue')
+const ProjectHome = () => import('../views/Project/children/Home.vue')
+const TaskDetail = () => import('../views/Project/children/Detail.vue')
+const Login = () => import('../views/Login/Index.vue')
 Vue.use(VueRouter)
 
 const routes = [{
@@ -16,8 +17,7 @@ const routes = [{
   name: 'Home',
   component: Home,
   redirect: '/project',
-  children: [
-    {
+  children: [{
       path: '/notice',
       name: 'Notice',
       component: Notice,
@@ -26,8 +26,7 @@ const routes = [{
       path: '/project',
       name: 'Project',
       component: Project,
-      children: [
-        {
+      children: [{
           path: '/task',
           name: 'Task',
           component: Task,
@@ -56,7 +55,11 @@ const routes = [{
       component: File,
     }
   ]
-}, ]
+}, {
+  path: '/login',
+  name: 'Login',
+  component: Login
+}]
 
 const router = new VueRouter({
   routes

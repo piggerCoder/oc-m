@@ -22,6 +22,12 @@ const api = {
     getAllLog() {
         return request('get', `${jurl}/log/get`)
     },
+    login(data) {
+        return request('post', `${url}/user/login`,data)
+    },
+    getUserInfo(){
+        return request('get', `${url}/user/getUserInfo`)
+    }
 }
 export default function install(Vue) {
     Vue.mixin({
