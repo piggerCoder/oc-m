@@ -58,9 +58,14 @@ export default {
 <style scoped lang="less">
 .login {
   width: 100%;
+  height: 100vh;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  // justify-content: center;
+  background-image: url(../../assets/bg.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
   &-title {
     display: flex;
     align-items: center;
